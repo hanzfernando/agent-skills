@@ -1,11 +1,11 @@
 ---
-name: security-review
-description: Review code for common security risks in web apps, APIs, authentication, authorization, cookies, JWTs, validation, secrets, encryption, and data exposure.
+name: security
+description: Implement, harden, debug, and review security-sensitive code for web apps, APIs, authentication, authorization, cookies, JWTs, validation, secrets, encryption, data exposure, and public-facing features.
 ---
 
-# Security Review Skill
+# Security Skill
 
-Use this skill when reviewing authentication, authorization, APIs, sensitive data handling, environment variables, encryption, storage, or public-facing features.
+Use this skill when implementing or reviewing authentication, authorization, APIs, sensitive data handling, environment variables, encryption, storage, or public-facing features.
 
 ## Core checks
 
@@ -55,7 +55,7 @@ For encryption-related code:
 - Never log plaintext secrets
 - Be clear where keys are derived, stored, and used
 
-## Review style
+## Security style
 
 Use severity labels:
 

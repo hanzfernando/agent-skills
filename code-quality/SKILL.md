@@ -1,13 +1,13 @@
 ---
-name: code-review
-description: Review code for readability, maintainability, architecture consistency, balanced DRY, naming, error handling, and practical engineering standards.
+name: code-quality
+description: Guide implementation, refactoring, and review for readable, maintainable code. Use when Codex is writing or changing code, shaping architecture within a feature, balancing DRY, naming things, handling errors, preserving existing patterns, or reviewing code quality.
 ---
 
-# Code Review Skill
+# Code Quality Skill
 
 ## Purpose
 
-Use this skill when reviewing:
+Use this skill when implementing or reviewing:
 - code changes
 - pull requests
 - feature branches
@@ -18,7 +18,7 @@ Focus on practical engineering quality and long-term maintainability.
 
 ---
 
-## Review Priorities
+## Quality Priorities
 
 Focus on:
 
@@ -34,11 +34,11 @@ Focus on:
 
 ---
 
-## Review Behavior
+## Implementation Behavior
 
 Be direct but constructive.
 
-Do not only agree with the implementation. Challenge choices when there is a simpler, safer, or more maintainable alternative.
+Do not only follow the first implementation idea. Challenge choices when there is a simpler, safer, or more maintainable alternative.
 
 Question assumptions when architectural, performance, or maintainability concerns exist.
 
@@ -52,7 +52,7 @@ Prefer actionable comments over vague feedback.
 
 ---
 
-## Review Output Structure
+## Output Structure
 
 Use this structure when appropriate:
 

@@ -1,13 +1,13 @@
 ---
-name: component-boundary-review
-description: Review frontend component boundaries, responsibility separation, maintainability, state ownership, and UI composition quality.
+name: component-boundaries
+description: Design, implement, refactor, and review frontend component boundaries, responsibility separation, maintainability, state ownership, hooks, and UI composition. Use when Codex is building or changing React components, frontend feature structure, or component APIs.
 ---
 
-# Component Boundary Review Skill
+# Component Boundaries Skill
 
-Use this skill when reviewing React components, frontend feature structure, hooks, or UI composition.
+Use this skill when implementing or reviewing React components, frontend feature structure, hooks, or UI composition.
 
-## Review priorities
+## Boundary priorities
 
 Focus on:
 
@@ -20,7 +20,7 @@ Focus on:
 - Readability and maintainability
 - Predictable data flow
 
-## Review style
+## Implementation style
 
 Prefer practical decomposition over excessive fragmentation.
 

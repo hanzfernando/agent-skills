@@ -1,11 +1,11 @@
 ---
-name: documentation-review
-description: Review technical documentation for clarity, onboarding quality, maintainability, operational usefulness, and engineering communication quality.
+name: documentation
+description: Write, update, restructure, and review technical documentation for clarity, onboarding, setup reproducibility, operational usefulness, API references, architecture notes, and engineering communication quality.
 ---
 
-# Documentation Review Skill
+# Documentation Skill
 
-Use this skill when reviewing READMEs, setup guides, architecture documentation, API documentation, onboarding guides, or operational notes.
+Use this skill when writing, updating, or reviewing READMEs, setup guides, architecture documentation, API documentation, onboarding guides, or operational notes.
 
 ## Documentation priorities
 
@@ -20,7 +20,7 @@ Focus on:
 - Engineering communication quality
 - Maintenance friendliness
 
-## Review style
+## Documentation style
 
 Prefer concise and actionable documentation.
 

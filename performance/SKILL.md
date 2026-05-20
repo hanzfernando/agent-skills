@@ -1,11 +1,11 @@
 ---
-name: performance-review
-description: Review frontend and backend code for performance issues, including React re-renders, query waterfalls, expensive calculations, caching, pagination, and unnecessary work.
+name: performance
+description: Implement, optimize, and review frontend and backend performance. Use when Codex is handling React re-renders, query waterfalls, expensive calculations, caching, pagination, large payloads, database queries, charts, dashboards, or unnecessary work.
 ---
 
-# Performance Review Skill
+# Performance Skill
 
-Use this skill when reviewing code for performance, especially React, Next.js, Node.js APIs, dashboards, charts, and frequently updated data.
+Use this skill when implementing, optimizing, or reviewing code for performance, especially React, Next.js, Node.js APIs, dashboards, charts, and frequently updated data.
 
 ## Frontend checks
 
@@ -38,7 +38,7 @@ Check for:
 - Rate limit pressure
 - Blocking or sequential async work that can be parallelized safely
 
-## Review style
+## Performance style
 
 Do not suggest optimization just because it is possible.
 

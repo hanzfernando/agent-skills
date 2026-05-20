@@ -1,11 +1,11 @@
 ---
-name: ui-design-review
-description: Review UI design for visual hierarchy, spacing, typography, contrast, accessibility, responsiveness, dashboard readability, and professional minimal interfaces.
+name: ui-design
+description: Design, implement, refine, and review UI for visual hierarchy, spacing, typography, contrast, accessibility, responsiveness, dashboard readability, forms, navigation, and professional minimal interfaces. Use when Codex is building or changing frontend screens and components.
 ---
 
-# UI Design Review Skill
+# UI Design Skill
 
-Use this skill when reviewing UI components, pages, dashboards, landing pages, forms, modals, cards, tables, or navigation.
+Use this skill when designing, implementing, refining, or reviewing UI components, pages, dashboards, landing pages, forms, modals, cards, tables, or navigation.
 
 ## Design priorities
 
@@ -60,7 +60,7 @@ For dashboards, check:
 - dense data is grouped logically
 - realtime updates do not make the UI feel unstable
 
-## Review style
+## UI style
 
 Use this structure:
 

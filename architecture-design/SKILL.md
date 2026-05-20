@@ -1,11 +1,11 @@
 ---
-name: architecture-review
-description: Review system architecture, module boundaries, scalability, coupling, maintainability, and long-term engineering structure.
+name: architecture-design
+description: Design, implement, refactor, and review system architecture, module boundaries, dependency direction, scalability, coupling, maintainability, and long-term engineering structure. Use for backend organization, frontend architecture, modularization, or cross-cutting feature changes.
 ---
 
-# Architecture Review Skill
+# Architecture Design Skill
 
-Use this skill when reviewing application structure, backend organization, frontend architecture, modularization, or scalability decisions.
+Use this skill when implementing or reviewing application structure, backend organization, frontend architecture, modularization, or scalability decisions.
 
 ## Architecture priorities
 
@@ -20,7 +20,7 @@ Focus on:
 - Simplicity and clarity
 - Consistency with existing architecture patterns
 
-## Review style
+## Architecture style
 
 Prioritize pragmatic architecture over theoretical perfection.
 

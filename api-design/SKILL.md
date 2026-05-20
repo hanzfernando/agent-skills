@@ -1,11 +1,11 @@
 ---
-name: api-design-review
-description: Review REST API design for consistency, pagination, filtering, validation, rate limiting, caching, error handling, versioning, and scalable response shapes.
+name: api-design
+description: Design, implement, and review REST APIs, routes, controllers, services, and response contracts. Use when Codex is adding or changing endpoints, request validation, pagination, filtering, auth boundaries, rate limits, caching, error handling, versioning, or scalable response shapes.
 ---
 
-# API Design Review Skill
+# API Design Skill
 
-Use this skill when reviewing API routes, controllers, services, response contracts, public APIs, or backend endpoint design.
+Use this skill when implementing or reviewing API routes, controllers, services, response contracts, public APIs, or backend endpoint design.
 
 ## API design checks
 
@@ -65,7 +65,7 @@ Check that errors are:
 - not leaking internals
 - mapped to correct HTTP status codes
 
-## Review style
+## Implementation style
 
 Use this structure:
 

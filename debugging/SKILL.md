@@ -1,9 +1,9 @@
 ---
-name: debugging-review
-description: Review debugging approach, root-cause analysis quality, troubleshooting methodology, and system-level assumptions.
+name: debugging
+description: Debug bugs, runtime failures, unstable systems, deployment issues, networking problems, and inconsistent behavior. Use when Codex needs to reproduce symptoms, inspect logs, validate assumptions, isolate root cause, design fixes, or review a debugging approach.
 ---
 
-# Debugging Review Skill
+# Debugging Skill
 
 Use this skill when debugging bugs, unstable systems, deployment issues, runtime failures, networking problems, or inconsistent behavior.
 
@@ -20,7 +20,7 @@ Focus on:
 - Failure boundaries and edge cases
 - Operational simplicity during debugging
 
-## Review style
+## Debugging style
 
 Be analytical and structured.
 
