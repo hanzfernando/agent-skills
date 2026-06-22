@@ -3,45 +3,25 @@ name: api-design
 description: Design, implement, and review REST APIs, routes, controllers, services, and response contracts. Use when Codex is adding or changing endpoints, request validation, pagination, filtering, auth boundaries, rate limits, caching, error handling, versioning, or scalable response shapes.
 ---
 
-# API Design Skill
+# API Design
 
-Use this skill when implementing or reviewing API routes, controllers, services, response contracts, public APIs, or backend endpoint design.
+## Core checks
 
-## API design checks
-
-Check for:
-
-- Clear REST semantics
-- Consistent route naming
-- Consistent response shapes
-- Proper status codes
-- Request validation
-- Error response consistency
-- Authentication and authorization boundaries
-- Pagination strategy
-- Filtering and sorting conventions
-- Rate limit placement
-- Caching opportunities
-- Idempotency for unsafe operations
-- Backward compatibility
-- Public API documentation needs
+- Follow existing conventions for REST semantics, route names, status codes, and response shapes.
+- Validate requests explicitly and return consistent, client-useful errors without leaking internals.
+- Enforce authentication, authorization, rate limits, and idempotency at the correct boundary.
+- Define pagination, filtering, sorting, caching, and maximum query limits.
+- Keep payloads small; do not expose raw database models or permit unbounded client queries.
+- Preserve backward compatibility or provide a versioning and migration plan.
+- Document public contracts and operational limits.
 
 ## Pagination
 
-Prefer cursor pagination for frequently updated datasets.
+Prefer cursor pagination for frequently changing datasets. Require a stable cursor, deterministic ordering, clear next-cursor and empty-result behavior, and a maximum page size. Include total counts only when clients need them.
 
-Check:
+## Response contracts
 
-- stable cursor field
-- deterministic sorting
-- next cursor behavior
-- empty result behavior
-- maximum limit enforcement
-- total count only when necessary
-
-## Response shape
-
-Prefer predictable response contracts:
+Use the project's established contract. Otherwise choose one predictable shape, such as:
 
 ```json
 {
@@ -51,45 +31,8 @@ Prefer predictable response contracts:
 }
 ```
 
-or the existing project convention.
+Do not mix unrelated formats across endpoints.
 
-Avoid mixing unrelated response formats across endpoints.
+## Review output
 
-## Error handling
-
-Check that errors are:
-
-- consistent
-- safe to expose
-- useful to clients
-- not leaking internals
-- mapped to correct HTTP status codes
-
-## Implementation style
-
-Use this structure:
-
-1. Endpoint summary
-2. API contract concerns
-3. Scalability concerns
-4. Security/auth concerns
-5. Suggested revised shape or route, if useful
-
-## Biases
-
-Prefer:
-
-- Consistency over personal preference
-- Explicit validation
-- Cursor pagination for active datasets
-- Small response payloads
-- Clear public API contracts
-- Practical rate limits
-
-Avoid:
-
-- Returning raw database models
-- Inconsistent naming
-- Overfetching
-- Client-driven unlimited queries
-- Breaking existing consumers without versioning or migration plan
+When reviewing, report the endpoint and contract first, then correctness, scalability, security/auth, and compatibility concerns. Propose a revised route or shape only when it clarifies an actionable change.

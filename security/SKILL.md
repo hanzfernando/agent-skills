@@ -3,82 +3,30 @@ name: security
 description: Implement, harden, debug, and review security-sensitive code for web apps, APIs, authentication, authorization, cookies, JWTs, validation, secrets, encryption, data exposure, and public-facing features.
 ---
 
-# Security Skill
-
-Use this skill when implementing or reviewing authentication, authorization, APIs, sensitive data handling, environment variables, encryption, storage, or public-facing features.
+# Security
 
 ## Core checks
 
-Check for:
+- Define the assets, actors, trust boundaries, entry points, and plausible abuse cases.
+- Enforce authentication and object/action-level authorization server-side; never trust client-provided identity or frontend checks.
+- Validate and constrain input; encode output and protect against injection, XSS, unsafe redirects, and path abuse.
+- Protect cookie flows against CSRF and configure `httpOnly`, `secure`, `sameSite`, expiration, path, and domain deliberately.
+- Minimize API responses, permissions, secret exposure, sensitive logs, and client-accessible configuration.
+- Apply rate limits, auditability, and secure failure behavior to sensitive actions.
 
-- Missing authorization checks
-- Authenticated user trusting client-provided IDs
-- Broken object-level authorization
-- Overexposed API responses
-- Missing input validation
-- Unsafe redirects
-- XSS risks
-- CSRF risks when using cookies
-- Insecure cookie settings
-- JWT misuse
-- Refresh token storage issues
-- Leaked secrets or environment variables
-- Sensitive logs
-- Weak rate limiting
-- Missing auditability for sensitive actions
+## Tokens and cryptography
 
-## Cookie and JWT checks
+For JWTs, verify signatures and allowed algorithms, use short-lived access tokens, rotate refresh tokens where appropriate, define revocation/invalidation, and exclude sensitive payload data.
 
-For cookies, check:
+Do not invent cryptography. Use established authenticated encryption such as AES-GCM, unique nonces/IVs as required, managed key storage and rotation, and explicit key derivation and use. Never log plaintext secrets.
 
-- `httpOnly`
-- `secure`
-- `sameSite`
-- appropriate expiration
-- path/domain scope
+## Review output
 
-For JWTs, check:
+Prioritize exploitable findings and explain the attack path, impact, evidence, and remediation. Use labels when helpful:
 
-- short access token lifetime
-- refresh token rotation where appropriate
-- server-side invalidation strategy
-- no sensitive data stored in token payload
-- signature verification and algorithm safety
+- **Critical:** directly exploitable or severe data exposure.
+- **Major:** likely weakness with meaningful impact.
+- **Minor:** limited hardening gap.
+- **Suggestion:** defense in depth.
 
-## Encryption checks
-
-For encryption-related code:
-
-- Do not invent custom crypto
-- Ensure unique nonces/IVs where required
-- Separate encryption and authentication concerns unless using AEAD like AES-GCM
-- Never log plaintext secrets
-- Be clear where keys are derived, stored, and used
-
-## Security style
-
-Use severity labels:
-
-- Critical: exploitable or data-leaking issue
-- Major: likely security weakness
-- Minor: hardening improvement
-- Suggestion: defense-in-depth
-
-## Biases
-
-Prefer:
-
-- Server-side authorization
-- Least privilege
-- Explicit validation
-- Safe defaults
-- Defense in depth
-- Clear threat model
-
-Avoid:
-
-- Security through obscurity
-- Trusting frontend checks
-- Logging sensitive values
-- Broad wildcard permissions
-- Storing secrets in client-accessible environments
+Prefer least privilege, explicit validation, safe defaults, and layered defenses. Do not rely on obscurity or wildcard permissions.

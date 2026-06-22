@@ -3,52 +3,19 @@ name: component-boundaries
 description: Design, implement, refactor, and review frontend component boundaries, responsibility separation, maintainability, state ownership, hooks, and UI composition. Use when Codex is building or changing React components, frontend feature structure, or component APIs.
 ---
 
-# Component Boundaries Skill
+# Component Boundaries
 
-Use this skill when implementing or reviewing React components, frontend feature structure, hooks, or UI composition.
+## Core checks
 
-## Boundary priorities
+- Give each component a cohesive responsibility and an explicit prop contract.
+- Keep state at the lowest owner that coordinates all consumers; preserve predictable data flow.
+- Separate presentation from business logic when that boundary improves testing or reuse.
+- Extract hooks for cohesive stateful behavior, not merely to reduce line count.
+- Encapsulate features while following the project's established composition patterns.
+- Split components only when it improves clarity, ownership, testing, or demonstrated reuse.
 
-Focus on:
+Avoid all-purpose components, scattered business logic, deep prop drilling, excessive wrappers, and fragmentation into trivial components.
 
-- Single responsibility
-- Component size and cohesion
-- State ownership clarity
-- Separation of presentation and business logic
-- Reusability balance
-- Hook extraction opportunities
-- Readability and maintainability
-- Predictable data flow
+## Review output
 
-## Implementation style
-
-Prefer practical decomposition over excessive fragmentation.
-
-Do not recommend splitting components unless it improves clarity, maintainability, or reuse.
-
-Use this structure:
-
-1. Current component responsibilities
-2. What works well
-3. Boundary or ownership issues
-4. State management concerns
-5. Suggested decomposition opportunities
-6. Refactor examples if useful
-
-## Biases
-
-Prefer:
-
-- Small focused components
-- Explicit prop interfaces
-- Feature-level encapsulation
-- Predictable state ownership
-- Readable JSX structure
-
-Avoid:
-
-- Massive all-purpose components
-- Deep prop drilling
-- Excessive wrapper components
-- Splitting components too aggressively
-- Business logic scattered across presentation layers
+Describe current responsibilities and what works before identifying boundary, ownership, or state-flow problems. Recommend the smallest useful decomposition and include a refactor example only when it makes the boundary concrete.

@@ -3,139 +3,27 @@ name: feature-planning
 description: Plan features before and during implementation by clarifying requirements, challenging assumptions, identifying missing behavior, validating direction, and choosing an implementation path. Use for new features, workflow changes, schema changes, architectural modifications, or major refactors.
 ---
 
-# Feature Planning Skill
+# Feature Planning
 
-## Purpose
+## Goal
 
-Use this skill before implementing a feature, schema change, architectural modification, workflow update, or major refactor.
+Establish enough shared understanding to choose a sound implementation without turning planning into a gate. Investigate available project context first. Ask only when unresolved uncertainty would materially change behavior, scope, data, security, architecture, or user experience; otherwise state reasonable assumptions and proceed.
 
-Focus on validating requirements, identifying missing information, reducing incorrect assumptions, and ensuring implementation effort aligns with the actual problem.
+## Planning workflow
 
----
+1. Define the problem, users, workflow, desired outcome, and measurable success.
+2. Inspect existing behavior, conventions, constraints, affected systems, and ownership.
+3. Identify missing requirements, edge and failure cases, compatibility needs, and operational expectations.
+4. Test the proposed solution against simpler alternatives and the option of no change.
+5. Compare viable directions by complexity, risk, reversibility, migration cost, and future maintenance.
+6. Recommend the smallest incremental path that solves the current need and name its assumptions.
 
-## Primary Goal
+Consider, where relevant: API contracts, schema and data ownership, authorization and privacy, performance and scale, state management, UI states and accessibility, observability, rollout/rollback, tests, and integration impact.
 
-Do not immediately jump into implementation.
+## Clarification behavior
 
-First ensure:
-- the problem is clearly understood
-- requirements are sufficiently defined
-- assumptions are validated
-- edge cases are considered
-- implementation direction makes sense
+Ask small, high-impact, implementation-relevant questions, grouped when useful. Do not overwhelm the user with theoretical or low-consequence questions. If a missing answer makes implementation risky, explain the decision it controls. Avoid speculative abstractions and commitments based only on hypothetical future requirements.
 
-Prefer clarification before commitment.
+## Planning output
 
----
-
-## Clarification Priorities
-
-Ask questions about:
-
-- Business requirements
-- User workflows
-- Expected behavior
-- Edge cases
-- Existing constraints
-- Backward compatibility
-- Performance expectations
-- Data ownership
-- Failure behavior
-- Security requirements
-- Operational expectations
-- UI/UX expectations
-- Scalability assumptions
-
-Focus especially on ambiguous requirements.
-
----
-
-## Planning Behavior
-
-Challenge unclear assumptions respectfully.
-
-Do not assume the first proposed implementation is the correct one.
-
-If requirements appear incomplete:
-- pause implementation recommendations
-- identify uncertainty explicitly
-- ask targeted clarification questions
-
-Avoid overengineering before understanding actual requirements.
-
-Prefer iterative clarification over speculative architecture.
-
----
-
-## Clarification Style
-
-Ask:
-- small focused questions
-- high-impact questions first
-- implementation-relevant questions
-- grouped related questions when possible
-
-Avoid:
-- overwhelming question dumps
-- unnecessary theoretical questions
-- asking about details that do not affect implementation
-
-Prefer questions that materially influence:
-- schema design
-- API contracts
-- state management
-- architecture
-- security
-- scalability
-- UX behavior
-
----
-
-## Requirement Validation
-
-Before recommending implementation, verify:
-
-- What problem is actually being solved?
-- Who uses this feature?
-- What existing systems are affected?
-- What are the failure cases?
-- What is considered success?
-- Is the proposed solution simpler than necessary?
-- Are there existing patterns in the project that should be reused?
-- Is the feature temporary, experimental, or long-term?
-
----
-
-## Output Structure
-
-Use this structure when appropriate:
-
-1. Current understanding
-2. Missing or unclear areas
-3. Clarification questions
-4. Risks or assumptions identified
-5. Possible implementation directions
-6. Recommended next step
-
----
-
-## Engineering Biases
-
-Prefer:
-
-- Clarifying before implementing
-- Simple solutions first
-- Incremental implementation
-- Existing project conventions
-- Explicit requirements
-- Root-cause understanding
-- Early identification of architectural impact
-
-Avoid:
-
-- Premature implementation
-- Assuming undefined requirements
-- Overengineering before validation
-- Large architectural commitments too early
-- Speculative abstractions
-- Building for hypothetical future requirements without evidence
+Adapt the depth to the change. Capture current understanding, material unknowns or assumptions, affected behavior, options and tradeoffs, risks, and a recommended next step. Omit sections that add no decision value.

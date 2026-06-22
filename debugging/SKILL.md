@@ -3,57 +3,20 @@ name: debugging
 description: Debug bugs, runtime failures, unstable systems, deployment issues, networking problems, and inconsistent behavior. Use when Codex needs to reproduce symptoms, inspect logs, validate assumptions, isolate root cause, design fixes, or review a debugging approach.
 ---
 
-# Debugging Skill
+# Debugging
 
-Use this skill when debugging bugs, unstable systems, deployment issues, runtime failures, networking problems, or inconsistent behavior.
+## Workflow
 
-## Debugging priorities
+1. Record the observed symptom, expected behavior, scope, environment, and timeline.
+2. Reproduce the failure with the smallest reliable case; note when reproduction is unavailable.
+3. Gather logs, traces, configuration, recent changes, and environmental differences before changing code.
+4. Form competing hypotheses and rank them by evidence, likelihood, and diagnostic cost.
+5. Test one variable at a time with reversible checks that can falsify each hypothesis.
+6. Identify the root cause and affected boundary before proposing the smallest safe fix.
+7. Verify the fix against the reproduction, regressions, edge cases, and relevant environments.
 
-Focus on:
+Do not treat the first plausible issue as the root cause. If fixes repeatedly fail, revisit assumptions and systemic causes rather than stacking patches. Avoid blind trial-and-error, simultaneous multi-system changes, and large refactors before isolation.
 
-- Root-cause analysis over patch stacking
-- Reproducible debugging steps
-- Isolation of variables
-- Assumption validation
-- Systemic and environmental causes
-- Logging quality and observability
-- Failure boundaries and edge cases
-- Operational simplicity during debugging
+## Reporting
 
-## Debugging style
-
-Be analytical and structured.
-
-Challenge assumptions if repeated fixes are failing.
-
-Do not immediately assume the first identified issue is the actual root cause.
-
-Prefer narrowing the problem space before suggesting large changes.
-
-Use this structure:
-
-1. Symptoms observed
-2. Likely root-cause candidates
-3. Assumptions to validate
-4. Suggested debugging steps
-5. Proposed fixes
-6. Risks or side effects
-
-## Biases
-
-Prefer:
-
-- Small isolated debugging steps
-- Reproducible tests
-- Inspecting logs before changing code
-- Environmental verification
-- Root-cause identification
-- Simpler fixes when possible
-
-Avoid:
-
-- Blind trial-and-error
-- Changing multiple systems simultaneously
-- Stacking temporary patches
-- Large refactors before identifying the issue
-- Assuming local and production environments behave identically
+Separate observations from hypotheses. Report the leading candidates and evidence, validation steps, root cause when established, proposed fix, verification, and risks. Be explicit about remaining uncertainty.

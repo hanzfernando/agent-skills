@@ -3,76 +3,26 @@ name: ui-design
 description: Design, implement, refine, and review UI for visual hierarchy, spacing, typography, contrast, accessibility, responsiveness, dashboard readability, forms, navigation, and professional minimal interfaces. Use when Codex is building or changing frontend screens and components.
 ---
 
-# UI Design Skill
+# UI Design
 
-Use this skill when designing, implementing, refining, or reviewing UI components, pages, dashboards, landing pages, forms, modals, cards, tables, or navigation.
+## Priorities
 
-## Design priorities
+- Make the primary task and action visually obvious through hierarchy, grouping, and restrained emphasis.
+- Use a consistent spacing rhythm, type scale, component language, and readable line lengths.
+- Maintain sufficient contrast, keyboard access, visible focus, semantic structure, labels, and non-color cues.
+- Design responsive behavior intentionally rather than merely shrinking desktop layouts.
+- Cover empty, loading, error, disabled, success, and long-content states without disruptive layout shifts.
+- Prefer calm, professional interfaces with restrained color, subtle depth, and practical interaction over decoration.
 
-Focus on:
+Avoid competing accents, purposeless oversized cards, low-contrast text, unclear button hierarchy, cramped ungrouped data, and animation that harms usability.
 
-- Visual hierarchy
-- Spacing rhythm
-- Typography scale
-- Contrast and readability
-- Responsive behavior
-- Information grouping
-- Component consistency
-- Interaction clarity
-- Accessibility
-- Dashboard density
-- Empty/loading/error states
+## Dashboard checks
 
-## Preferred style
+- Make the most decision-relevant metric or task dominant; show units and time context.
+- Keep chart labels and legends readable and avoid encodings users cannot interpret quickly.
+- Group dense data by task and make filters, active state, and reset behavior clear.
+- Explain missing data and keep loading or real-time updates spatially stable.
 
-Prefer:
+## Review output
 
-- calm professional interfaces
-- restrained accent colors
-- clean sans-serif typography
-- strong spacing consistency
-- subtle borders and shadows
-- clear section grouping
-- readable dashboard layouts
-- practical UI over flashy UI
-
-Avoid:
-
-- excessive gradients
-- inconsistent spacing
-- oversized cards without purpose
-- too many competing accent colors
-- low contrast text
-- unclear button hierarchy
-- decorative animations that hurt usability
-- cramped dashboards with no grouping
-
-## Dashboard-specific checks
-
-For dashboards, check:
-
-- most important metric is visually dominant
-- chart labels are readable
-- units are visible
-- empty states explain what is missing
-- loading states do not cause layout shift
-- filters are easy to understand
-- dense data is grouped logically
-- realtime updates do not make the UI feel unstable
-
-## UI style
-
-Use this structure:
-
-1. Overall UI impression
-2. Visual hierarchy issues
-3. Spacing/layout issues
-4. Accessibility/readability issues
-5. Concrete improvement suggestions
-6. Optional revised component example
-
-## Biases
-
-Prefer practical improvements that a developer can implement quickly.
-
-Do not only say "make it modern." Explain exactly what to change.
+Give concrete, implementable changes rather than labels such as “make it modern.” Prioritize overall task clarity, hierarchy/layout, accessibility/readability, responsive and state behavior, then visual polish. Include a revised component example only when it communicates the fix better than prose.

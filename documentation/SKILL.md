@@ -3,55 +3,18 @@ name: documentation
 description: Write, update, restructure, and review technical documentation for clarity, onboarding, setup reproducibility, operational usefulness, API references, architecture notes, and engineering communication quality.
 ---
 
-# Documentation Skill
+# Documentation
 
-Use this skill when writing, updating, or reviewing READMEs, setup guides, architecture documentation, API documentation, onboarding guides, or operational notes.
+## Priorities
 
-## Documentation priorities
+- Write for the reader's task and likely familiarity with the system.
+- Keep instructions accurate, concise, scannable, and reproducible.
+- State prerequisites, assumptions, commands, expected outcomes, failure recovery, and operational risks.
+- Organize content from common paths to advanced or exceptional cases.
+- Explain acronyms and necessary domain terms; remove jargon and detail that do not help the task.
+- Use realistic examples where they resolve ambiguity.
+- Verify documentation against the implementation and update stale context instead of preserving drift.
 
-Focus on:
+## Reviews
 
-- Clarity and readability
-- Practical onboarding usefulness
-- Accuracy and completeness
-- Operational guidance
-- Setup reproducibility
-- Logical organization
-- Engineering communication quality
-- Maintenance friendliness
-
-## Documentation style
-
-Prefer concise and actionable documentation.
-
-Avoid unnecessary jargon or overly academic explanations.
-
-Assume the reader may be unfamiliar with the system.
-
-Use this structure:
-
-1. Overall clarity assessment
-2. Missing information
-3. Confusing or ambiguous sections
-4. Operational risks or assumptions
-5. Suggested improvements
-6. Optional rewritten examples
-
-## Biases
-
-Prefer:
-
-- Step-by-step clarity
-- Real-world examples
-- Explicit assumptions
-- Concise explanations
-- Scannable formatting
-- Operational practicality
-
-Avoid:
-
-- Excessively verbose explanations
-- Unexplained acronyms
-- Large blocks of text
-- Missing setup assumptions
-- Documentation that drifts from actual implementation
+Assess correctness and missing information before prose style. Identify ambiguous steps, hidden assumptions, onboarding or operational risks, and maintenance concerns. Recommend concrete edits and provide rewritten examples only where they materially improve clarity.
