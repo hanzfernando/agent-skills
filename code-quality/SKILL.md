@@ -1,6 +1,6 @@
 ---
 name: code-quality
-description: Guide implementation, refactoring, and review for readable, maintainable code. Use when Codex is writing or changing code, shaping architecture within a feature, balancing DRY, naming things, handling errors, preserving existing patterns, or reviewing code quality.
+description: Guide implementation, refactoring, and review for readable, maintainable code. Use when writing or changing code, shaping architecture within a feature, balancing DRY, naming things, handling errors, preserving existing patterns, or reviewing code quality.
 ---
 
 # Code Quality
@@ -14,6 +14,10 @@ description: Guide implementation, refactoring, and review for readable, maintai
 - Preserve type safety, validation, error handling, and edge-case behavior.
 - Prefer targeted, root-cause fixes over clever code, broad rewrites, or stacked patches.
 - Update useful comments and documentation when behavior changes; do not discard context casually.
+
+## Testability
+
+Write code so behavior can be tested without excessive mocking — favor pure functions, explicit dependencies, and clear seams between business logic and I/O. New or changed logic should come with tests covering the primary path and meaningful edge cases, following the project's existing test conventions and coverage expectations. Flag logic that's hard to test as a design smell, not just a testing gap.
 
 ## Working behavior
 

@@ -24,6 +24,21 @@ description: Design, implement, refactor, and review system architecture, module
 
 Always ask whether the proposed architecture is simpler than the problem it solves. Avoid premature microservices, circular dependencies, broad shared utility layers, shared data without ownership, framework-driven complexity, and big-bang rewrites. Prefer modular monoliths, vertical slices, bounded contexts, and facades/contracts when they fit the evidence—not by default.
 
+## Backend pattern toolkit
+
+Name the pattern under consideration explicitly rather than describing structure only in the abstract. Common options and when they earn their cost:
+
+- **Modular monolith / vertical slices** — default starting point; use unless a concrete pressure from step 2 argues otherwise.
+- **Event-driven / message queue** — when work is naturally async, needs to survive downstream outages, or must fan out to multiple independent consumers.
+- **CQRS** — when read and write load, shape, or scaling needs diverge significantly; adds real complexity, so require clear evidence.
+- **Service-per-database / bounded-context data ownership** — when two teams or domains are contending over the same tables with conflicting change cadence.
+
+Treat these as options to weigh against "no change," not defaults to reach for.
+
+## Decision records
+
+For architecturally significant changes, capture the decision, context, alternatives considered, and consequences — in the project's existing ADR location/format if one exists, otherwise as a short note alongside the change. This matters most when the choice is hard to reverse.
+
 ## Influences
 
 Use these as lenses, not authorities:

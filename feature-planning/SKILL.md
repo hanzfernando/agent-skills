@@ -20,10 +20,14 @@ Establish enough shared understanding to choose a sound implementation without t
 
 Consider, where relevant: API contracts, schema and data ownership, authorization and privacy, performance and scale, state management, UI states and accessibility, observability, rollout/rollback, tests, and integration impact.
 
+## Acceptance criteria
+
+Before implementation starts, state what "done" means in testable terms: the specific behaviors, inputs/outputs, and error cases that must hold. Use the project's existing format (tickets, specs) where one exists. Treat vague criteria ("works well", "handles errors") as a planning gap to resolve, not something to interpret later.
+
 ## Clarification behavior
 
 Ask small, high-impact, implementation-relevant questions, grouped when useful. Do not overwhelm the user with theoretical or low-consequence questions. If a missing answer makes implementation risky, explain the decision it controls. Avoid speculative abstractions and commitments based only on hypothetical future requirements.
 
 ## Planning output
 
-Adapt the depth to the change. Capture current understanding, material unknowns or assumptions, affected behavior, options and tradeoffs, risks, and a recommended next step. Omit sections that add no decision value.
+Adapt the depth to the change. Capture current understanding, material unknowns or assumptions, affected behavior, options and tradeoffs, risks, acceptance criteria, and a recommended next step. Omit sections that add no decision value.
