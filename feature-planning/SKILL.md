@@ -1,6 +1,6 @@
 ---
 name: feature-planning
-description: Plan features before and during implementation by clarifying requirements, challenging assumptions, identifying missing behavior, validating direction, and choosing an implementation path. Use for new features, workflow changes, schema changes, architectural modifications, or major refactors.
+description: Plan features, workflow changes, schema or architectural modifications, and major refactors when requirements, scope, compatibility, or implementation direction need decisions. Use before or during implementation to resolve consequential uncertainty; not routine fixes with clear expected behavior.
 ---
 
 # Feature Planning
@@ -22,7 +22,7 @@ Consider, where relevant: API contracts, schema and data ownership, authorizatio
 
 ## Acceptance criteria
 
-Before implementation starts, state what "done" means in testable terms: the specific behaviors, inputs/outputs, and error cases that must hold. Use the project's existing format (tickets, specs) where one exists. Treat vague criteria ("works well", "handles errors") as a planning gap to resolve, not something to interpret later.
+Use existing acceptance criteria or define observable success for the behavior being planned, including material failure cases. Keep small changes brief; a separate spec or approval step is not required. Resolve vague criteria ("works well", "handles errors") through project evidence or focused clarification before committing to dependent behavior.
 
 ## Clarification behavior
 

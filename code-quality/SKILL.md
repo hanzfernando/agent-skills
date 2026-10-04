@@ -1,6 +1,6 @@
 ---
 name: code-quality
-description: Guide implementation, refactoring, and review for readable, maintainable code. Use when writing or changing code, shaping architecture within a feature, balancing DRY, naming things, handling errors, preserving existing patterns, or reviewing code quality.
+description: Improve code readability and maintainability during refactors, code reviews, or implementation with consequential choices about naming, control flow, duplication, abstraction, error handling, or test seams. Use for local code structure; routine edits alone do not require this skill.
 ---
 
 # Code Quality
@@ -8,7 +8,7 @@ description: Guide implementation, refactoring, and review for readable, maintai
 ## Priorities
 
 - Make intent, business rules, names, and control flow easy to understand.
-- Follow project conventions and preserve behavior and implementation intent.
+- Follow project conventions and preserve intended behavior; challenge patterns with demonstrated correctness or maintenance costs.
 - Keep functions, components, and modules cohesive with clear boundaries.
 - Balance duplication against abstraction; abstract only when it makes change safer or clearer.
 - Preserve type safety, validation, error handling, and edge-case behavior.
@@ -17,11 +17,11 @@ description: Guide implementation, refactoring, and review for readable, maintai
 
 ## Testability
 
-Write code so behavior can be tested without excessive mocking — favor pure functions, explicit dependencies, and clear seams between business logic and I/O. New or changed logic should come with tests covering the primary path and meaningful edge cases, following the project's existing test conventions and coverage expectations. Flag logic that's hard to test as a design smell, not just a testing gap.
+Write code so behavior can be tested without excessive mocking — favor pure functions, explicit dependencies, and clear seams between business logic and I/O. Use existing tests to protect refactors; add tests for changed logic or uncovered risks, proportional to the change and project expectations. Inspect dependency seams when testing needs excessive mocking.
 
 ## Working behavior
 
-Evaluate alternatives when the first implementation is complex, fragile, or inconsistent. Challenge assumptions with evidence and explain material tradeoffs. Avoid excessive helpers, generic utility layers, and abstractions that hide intent.
+Before a refactor, inspect callers and tests for behavior that must survive, including error and side-effect ordering. Evaluate alternatives when the first implementation is complex, fragile, or inconsistent. Challenge assumptions with evidence and explain material tradeoffs. Avoid excessive helpers, generic utility layers, and abstractions that hide intent.
 
 ## Reviews
 

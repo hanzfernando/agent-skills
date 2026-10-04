@@ -1,6 +1,6 @@
 ---
 name: performance
-description: Implement, optimize, and review frontend and backend performance. Use when handling React re-renders, query waterfalls, expensive calculations, caching, pagination, large payloads, database queries, charts, dashboards, or unnecessary work.
+description: Investigate, optimize, and review frontend or backend latency, throughput, rendering, and resource use. Use for measured or suspected bottlenecks, query waterfalls, costly renders, unbounded work, or caching and pagination decisions driven by workload; not every query, chart, or dashboard change.
 ---
 
 # Performance
@@ -11,9 +11,9 @@ Optimize only where measurements, user impact, scale risk, or excessive resource
 
 ## Measurement workflow
 
-1. Check whether the project already has profiling, APM, or query-logging tooling in place; use it. If none exists, default to the lightest tool that answers the question — `EXPLAIN ANALYZE` for queries, browser/React profiler for renders, request timing logs for endpoints.
+1. Use existing profiling, APM, or query logs, or the lightest suitable tool. Start query inspection with `EXPLAIN`; `EXPLAIN ANALYZE` executes statements, so assess side effects and load before using it.
 2. Identify the actual bottleneck before changing code — don't optimize the first slow-looking line.
-3. State the measured cost (latency, query count, render count, payload size) before and after the change.
+3. Compare before/after costs under equivalent data, load, and cache conditions, using the metric relevant to user impact. If measurements are unavailable, label estimates and state how to validate them.
 4. Treat a change as unjustified if it adds complexity without a measured or clearly reasoned improvement.
 
 ## Frontend checks
@@ -28,13 +28,13 @@ Optimize only where measurements, user impact, scale risk, or excessive resource
 ## Backend checks
 
 - N+1 queries, missing query-driven indexes, and inefficient filters, sorts, joins, or selections
-- Missing pagination, unbounded work, and oversized payloads — use the project's established default page size; otherwise default to a bounded size (e.g. 20-50) with an enforced maximum
-- Repeated computation or requests that suit bounded caching
-- Blocking work or independent async operations serialized unnecessarily
+- Missing pagination, unbounded work, and oversized payloads — respect existing defaults; choose enforced maximums from payload/query costs and client contracts
+- Repeated computation or requests that suit bounded caching with explicit freshness and invalidation
+- Blocking work, serialized independent operations, or unbounded concurrency that overloads dependencies
 - Rate-limit, memory, CPU, connection, and cache-invalidation pressure
 
 Prefer server-side filtering and pagination, focused memoization, stable cache keys, and reduced payloads. Avoid memoizing everything, moving large data work to clients, or hiding optimizations behind excessive abstraction.
 
 ## Reporting
 
-For each material issue, state the evidence or expected impact, proposed change, tradeoff, and how to measure success. Distinguish measured bottlenecks from plausible risks.
+For each material issue, identify the code/query location, evidence or expected impact, proposed change, tradeoff, and success metric. Distinguish measured bottlenecks from plausible risks.

@@ -1,6 +1,6 @@
 ---
 name: architecture-design
-description: Design, implement, refactor, and review system architecture, module boundaries, dependency direction, scalability, coupling, maintainability, and long-term engineering structure. Use for backend organization, frontend architecture, modularization, or cross-cutting feature changes.
+description: Design, implement, refactor, and review system structure when module ownership, dependency direction, integration boundaries, deployment topology, or cross-cutting changes require architectural decisions. Use for modularization and evidence-backed scaling decisions; not localized cleanup within established boundaries.
 ---
 
 # Architecture Design
@@ -26,9 +26,9 @@ Always ask whether the proposed architecture is simpler than the problem it solv
 
 ## Backend pattern toolkit
 
-Name the pattern under consideration explicitly rather than describing structure only in the abstract. Common options and when they earn their cost:
+Name a pattern when it clarifies a concrete structural choice. Common options and when they earn their cost:
 
-- **Modular monolith / vertical slices** — default starting point; use unless a concrete pressure from step 2 argues otherwise.
+- **Modular monolith / vertical slices** — simple in-process boundaries for a new system; in an existing system, compare incremental boundary improvements against restructuring.
 - **Event-driven / message queue** — when work is naturally async, needs to survive downstream outages, or must fan out to multiple independent consumers.
 - **CQRS** — when read and write load, shape, or scaling needs diverge significantly; adds real complexity, so require clear evidence.
 - **Service-per-database / bounded-context data ownership** — when two teams or domains are contending over the same tables with conflicting change cadence.
@@ -58,4 +58,4 @@ Structure substantial reviews around:
 3. Scalability and operational implications
 4. Prioritized improvements
 
-For each recommendation, state the evidence, benefit, tradeoffs, complexity, and migration path. Omit empty sections and distinguish observed problems from future risks.
+Identify affected modules or code locations, evidence, benefit, tradeoffs, and migration path. Verify dependency direction and affected flows after implementation stages. Omit empty sections; distinguish observed problems from future risks.

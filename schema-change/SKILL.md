@@ -1,13 +1,13 @@
 ---
 name: schema-change
-description: Design, implement, migrate, and review database schema changes, Prisma models, migrations, relationships, indexes, constraints, seed data, and backward compatibility. Use when Codex is adding or changing persisted data shapes or API/frontend contracts tied to schema fields.
+description: Design, implement, migrate, and review persisted data shapes, database constraints, indexes, Prisma models, and data backfills. Use when schema or stored-data changes affect queries, deployment compatibility, or dependent application contracts; not API/frontend-only field changes that leave persistence unchanged.
 ---
 
 # Schema Change
 
 ## Design checks
 
-- Confirm persistence or a schema change is necessary and matches real query and lifecycle needs.
+- Inspect schema, migration history, queries, and existing data; confirm the change matches persistence and lifecycle needs.
 - Use clear names, explicit ownership, intentional nullability/defaults, and appropriate normalization.
 - Define foreign keys, cardinality, uniqueness, delete behavior, and consistency boundaries.
 - Choose enums only for stable values; avoid opaque JSON for structured relational data.
@@ -18,7 +18,7 @@ Challenge both rigid and over-general designs. Compare alternatives when they ma
 
 ## Migration safety
 
-Assess production data volume and quality, locks and deployment duration, backfills, defaults, nullable-to-required transitions, renames, destructive changes, enum changes, large-table indexes, rollback/recovery, and mixed-version application compatibility.
+Inspect generated migration SQL, not only model diffs. Assess data quality/volume, locks and deployment duration, backfills/defaults, constraint transitions, renames, destructive or enum changes, large-table indexes, and mixed-version compatibility. Validate affected constraints, backfills, and recovery on representative data in a safe environment.
 
 For risky changes, use an expand-and-contract sequence where applicable:
 
@@ -29,11 +29,11 @@ For risky changes, use an expand-and-contract sequence where applicable:
 5. Enforce required constraints after compatibility is proven.
 6. Remove the old shape in a later release with a recovery plan.
 
-Do not approve destructive migrations without an explicit backup, backfill, or recovery strategy.
+Require recovery for data removed by destructive changes; a backfill alone is insufficient. Distinguish schema rollback from data restoration and account for writes made after deployment.
 
 ## Prisma checks
 
-Verify model and relation names, optionality, `onDelete`, `@unique`, `@@unique`, `@@index`, enum stability, generated-client impact, and resulting `select`/`include` query cost. Prefer explicit relations and indexes over accidental behavior.
+Verify model/relation names, optionality, `onDelete`, `@unique`, `@@unique`, `@@index`, enum stability, generated-client impact, and `select`/`include` query cost. Prefer explicit relations and indexes over accidental behavior.
 
 ## Application impact
 
@@ -41,7 +41,7 @@ Trace changes through DTO and request validation, API contracts, authorization, 
 
 ## Reviews
 
-Lead with data-loss, production-safety, integrity, and compatibility findings. Then cover model quality, query/index implications, and application impact. Provide a staged migration plan when risk warrants it. Label severity only when useful:
+Lead with data-loss, production-safety, integrity, and compatibility findings. Locate each actionable finding in the schema, migration, or caller and explain the failure and correction. Then cover model quality, query/index implications, and application impact. Provide a staged migration plan when risk warrants it. Label severity only when useful:
 
 - **Critical:** data loss, unsafe deployment, broken production behavior, or security impact.
 - **Major:** integrity, relationship, compatibility, or likely scale problem.
